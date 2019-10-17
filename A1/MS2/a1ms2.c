@@ -12,23 +12,20 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
-
-// This source file needs to "know about" the structures you declared
-// in the header file before referring to those new types:
-// HINT: put the header file name in double quotes so the compiler knows
-//       to look for it in the same directory/folder as this source file
-// #include your contacts header file on the next line:
-
+#include "./contacts.h"
 
 int main (void)
 {
     // Declare variables here:
-
-
+	struct Name name = {""};
+	struct Address address = [0, 0 , "", "", ""];
+	struct Numbers number = {0};
 
     // Display the title
-
-
+	printf("\n");
+	printf("Contact Management System");
+	printf("-------------------------");
+	printf("\n");
 
     // Contact Name Input:
 
@@ -95,3 +92,4 @@ int main (void)
 
     Structure test for Name, Address, and Numbers Done!
 */
+
