@@ -29,8 +29,15 @@ int main (void)
     // Contact Name Input:
 	printf("\nPlease enter the contact's first name: ");
 	scanf("%30s", name.firstName);
-	printf("%s", name.firstName);
+	// printf("%s", name.firstName);
 
+	print("\nDo you want to enter a middle initial(s)? (y or n): ");
+	scanf("%c", &yorn);
+	if (yourn == "y" || "Y")
+	{
+		printf("\nPlease enter the contact's middle initial(s): ");
+		scanf("%7s", name.middleInitial);
+	}
     // Contact Address Input:
 
 
