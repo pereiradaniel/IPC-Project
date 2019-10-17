@@ -21,6 +21,8 @@ int main (void)
 	struct Address address = {0,0,"","",""};
 	struct Numbers number = {{0}};
 
+	char yorn;
+
     // Display the title
 	printf("\nContact Management System");
 	printf("\n-------------------------");
@@ -31,13 +33,14 @@ int main (void)
 	scanf("%30s", name.firstName);
 	// printf("%s", name.firstName);
 
-	print("\nDo you want to enter a middle initial(s)? (y or n): ");
-	scanf("%c", &yorn);
-	if (yourn == "y" || "Y")
-	{
-		printf("\nPlease enter the contact's middle initial(s): ");
-		scanf("%7s", name.middleInitial);
-	}
+	printf("\nDo you want to enter a middle initial(s)? (y or n): ");
+	// scanf("%c", &yorn);
+	// if (yorn == "y" || yorn == "Y")
+	// {
+	//	printf("\nPlease enter the contact's middle initial(s): ");
+	//	scanf("%6s", name.middleInitial);
+	//	printf("%s", name.middleInitial);
+	// }
     // Contact Address Input:
 
 
