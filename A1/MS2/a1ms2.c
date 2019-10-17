@@ -27,8 +27,9 @@ int main (void)
 	printf("\n");
 
     // Contact Name Input:
-
-
+	printf("\nPlease enter the contact's first name: ");
+	scanf("%30s", name.firstName);
+	printf("%s", name.firstName);
 
     // Contact Address Input:
 
