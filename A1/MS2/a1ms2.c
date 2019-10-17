@@ -17,14 +17,13 @@
 int main (void)
 {
     // Declare variables here:
-	struct Name name = {""};
-	struct Address address = [0, 0 , "", "", ""];
-	struct Numbers number = {0};
+	struct Name name = {{""}};
+	struct Address address = {0,0,"","",""};
+	struct Numbers number = {{0}};
 
     // Display the title
-	printf("\n");
-	printf("Contact Management System");
-	printf("-------------------------");
+	printf("\nContact Management System");
+	printf("\n-------------------------");
 	printf("\n");
 
     // Contact Name Input:
