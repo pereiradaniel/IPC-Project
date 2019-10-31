@@ -56,7 +56,7 @@ int main (void)
 
 
     // Contact Address Input:
-	// Ask gor street number:
+	// Ask for street number:
 	//	! Enforce values greater than 0
 	do
 	{
@@ -66,6 +66,10 @@ int main (void)
 	while (address.streetNumber < 1);
 	printf("\nstreetNumber = %d", address.streetNumber);
 
+	// Ask for street name:
+	printf("\nPlease enter the contact's street name: ");
+	scanf("%40s", address.street);
+	printf("\nstreet = %s", address.street);
     // Contact Numbers Input:
 
 
