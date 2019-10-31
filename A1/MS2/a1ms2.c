@@ -55,11 +55,16 @@ int main (void)
 	printf("\nlastName = %s", name.lastName);
 
 
-
     // Contact Address Input:
-	//printf("\nPlease enter the contact's address: ");
-	//scanf("%d");
-
+	// Ask gor street number:
+	//	! Enforce values greater than 0
+	do
+	{
+		printf("\nPlease enter the contact's street number: ");
+		scanf("%d", &address.streetNumber);
+	}
+	while (address.streetNumber < 1);
+	printf("\nstreetNumber = %d", address.streetNumber);
 
     // Contact Numbers Input:
 
