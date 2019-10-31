@@ -7,15 +7,12 @@ struct Name {
 
 // Structure type Address declaration
 struct Address {
-
-	int 	streetNumber, apartmentNumber;
 	char 	street[41], postalCode[8], city[41];
-
+	int 	streetNumber, apartmentNumber;
 };
+
 
 // Structure type Numbers declaration
 struct Numbers {
-
 	char 	cell[11], home[11], business[11];
-
 };
