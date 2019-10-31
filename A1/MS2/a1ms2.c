@@ -38,12 +38,16 @@ int main (void)
 	// Ask for middle initial:
 	printf("\nDo you want to enter a middle initial(s)? (y or n): ");
 	scanf("%s", &yorn);
+	
+	// Evaluate input and ask for middle initial if selected:
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("\nPlease enter the contact's middle initial(s): ");
 		scanf("%6s", name.middleInitial);
 		printf("\nmiddleInitial = %s", name.middleInitial);
 	}
+	// NOTES:
+	//	- No logic handling for NO, invalid input.  (Not specified by MS2)
 
 	// Ask for last name:
 	printf("\nPlease enter the contact's last name: ");
