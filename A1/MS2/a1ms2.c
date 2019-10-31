@@ -29,20 +29,32 @@ int main (void)
 	printf("\n");
 
     // Contact Name Input:
+
+	// Ask for first name:
 	printf("\nPlease enter the contact's first name: ");
 	scanf("%30s", name.firstName);
-	// printf("%s", name.firstName);
+	printf("\nfisrtName = %s", name.firstName);
 
+	// Ask for middle initial:
 	printf("\nDo you want to enter a middle initial(s)? (y or n): ");
-	// scanf("%c", &yorn);
-	// if (yorn == "y" || yorn == "Y")
-	// {
-	//	printf("\nPlease enter the contact's middle initial(s): ");
-	//	scanf("%6s", name.middleInitial);
-	//	printf("%s", name.middleInitial);
-	// }
-    // Contact Address Input:
+	scanf("%s", &yorn);
+	if (yorn == 'y' || yorn == 'Y')
+	{
+		printf("\nPlease enter the contact's middle initial(s): ");
+		scanf("%6s", name.middleInitial);
+		printf("\nmiddleInitial = %s", name.middleInitial);
+	}
 
+	// Ask for last name:
+	printf("\nPlease enter the contact's last name: ");
+	scanf("%35s", name.lastName);
+	printf("\nlastName = %s", name.lastName);
+
+
+
+    // Contact Address Input:
+	//printf("\nPlease enter the contact's address: ");
+	//scanf("%d");
 
 
     // Contact Numbers Input:
