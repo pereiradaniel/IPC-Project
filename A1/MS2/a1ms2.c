@@ -85,6 +85,17 @@ int main (void)
 	printf("\napartmentNumber = %d", address.apartmentNumber);
 	}
 
+	// Ask for postal code:
+	printf("\nPlease enter the contact's postal code: ");
+	scanf("%7s", address.postalCode);
+	printf("postalCode = %s", address.postalCode);
+
+	// Ask for city:
+	printf("\nPlease enter the contact's city: ");
+	scanf("%40s", address.city);
+	printf("city = %s", address.city);
+
+
 
     // Contact Numbers Input:
 
