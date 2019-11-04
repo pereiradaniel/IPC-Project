@@ -93,7 +93,6 @@ int main(void)
 	{
 		printf("Please enter the contact's cell phone number: ");
 		scanf(" %10s", numbers.cell);
-		printf("%s", numbers.cell);
 	}
 
 	// Ask for home number:
