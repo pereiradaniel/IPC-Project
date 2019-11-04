@@ -19,7 +19,7 @@ int main (void)
     // Declare variables here:
 	struct Name name = {{""}};
 	struct Address address = {0,0,"","",""};
-	struct Numbers number = {{0}};
+	struct Numbers numbers = {{0}};
 
 	char yorn;
 
@@ -33,18 +33,16 @@ int main (void)
 	// Ask for first name:
 	printf("\nPlease enter the contact's first name: ");
 	scanf("%30s", name.firstName);
-	printf("\nfisrtName = %s", name.firstName);
 
 	// Ask for middle initial:
 	printf("\nDo you want to enter a middle initial(s)? (y or n): ");
 	scanf("%s", &yorn);
-	
+
 	// Evaluate input and ask for middle initial if selected:
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("\nPlease enter the contact's middle initial(s): ");
-		scanf("%6s", name.middleInitial);
-		printf("\nmiddleInitial = %s", name.middleInitial);
+		scanf(" %7[^\n]", name.middleInitial);
 	}
 	// NOTES:
 	//	- No logic handling for NO, invalid input.  (Not specified by MS2)
@@ -52,7 +50,6 @@ int main (void)
 	// Ask for last name:
 	printf("\nPlease enter the contact's last name: ");
 	scanf("%35s", name.lastName);
-	printf("\nlastName = %s", name.lastName);
 
 
     // Contact Address Input:
@@ -64,12 +61,10 @@ int main (void)
 		scanf("%d", &address.streetNumber);
 	}
 	while (address.streetNumber < 1);
-	printf("\nstreetNumber = %d", address.streetNumber);
 
 	// Ask for street name:
 	printf("\nPlease enter the contact's street name: ");
-	scanf("%40s", address.street);
-	printf("\nstreet = %s", address.street);
+	scanf(" %40[^\n]", address.street);
 
 	// Ask for apartment number:
 	printf("\nDo you want to enter an apartment number? (y or n): ");
@@ -82,28 +77,83 @@ int main (void)
 			scanf("%d", &address.apartmentNumber);
 		}
 		while (address.apartmentNumber < 1);
-	printf("\napartmentNumber = %d", address.apartmentNumber);
 	}
 
 	// Ask for postal code:
 	printf("\nPlease enter the contact's postal code: ");
-	scanf("%7s", address.postalCode);
-	printf("postalCode = %s", address.postalCode);
+	scanf(" %7[^\n]", address.postalCode);
 
 	// Ask for city:
 	printf("\nPlease enter the contact's city: ");
-	scanf("%40s", address.city);
-	printf("city = %s", address.city);
-
+	scanf(" %40[^\n]", address.city);
 
 
     // Contact Numbers Input:
+	
+	// Ask for cell number:
+	printf("\nDo you want to enter a cell phone number? (y or n): ");
+	scanf("%s", &yorn);
+	if (yorn == 'y' || yorn == 'Y')
+	{
+		printf("\nPlease enter the contact's cell phone number: ");
+		scanf("%10s", numbers.cell);
+		printf("%s", numbers.cell);
+	}
 
+	// Ask for home number:
+	printf("\nDo you want to enter a home phone number? (y or n): ");
+	scanf("%s", &yorn);
+	if (yorn == 'y' || yorn == 'Y')
+	{
+		printf("\nPlease enter the contact's home phone number: ");
+		scanf("%10s", numbers.home);
+		printf("%s", numbers.home);
+	}
+
+	// Ask for business number:
+	printf("\nDo you want to enter a business phone number? (y or n): ");
+	scanf("%s", &yorn);
+	if (yorn == 'y' || yorn == 'Y')
+	{
+		printf("\nPlease enter the contact's business phone number: ");
+		scanf("%10s", numbers.business);
+		printf("%s", numbers.business);
+	}
 
 
     // Display Contact Summary Details
+	printf("\nContact Details");
+	printf("\n-----------------");
 
+	printf("\nName Details");
+	printf("\nFirst name: %s", name.firstName);
+	if (name.middleInitial[0] != '\0') {
+		printf("\nMiddle initial(s): %s", name.middleInitial);
+	}
+	printf("\nLast name: %s", name.lastName);
+	printf("\n");
 
+	printf("\nAddress Details");
+	printf("\nStreet number: %d", address.streetNumber);
+	printf("\nStreet name: %s", address.street);
+	if (address.apartmentNumber > 0) {
+		printf("\nApartment: %d", address.apartmentNumber);
+	}
+	printf("\nPostal code: %s", address.postalCode);
+	printf("\nCity: %s", address.city);
+	printf("\n");
+
+	printf("\nPhone Numbers:");
+	if (numbers.cell[0] != '\0') {
+		printf("\nCell phone number: %s", numbers.cell);
+	}
+	if (numbers.home[0] != '\0') {
+		printf("\nHome phone number: %s", numbers.home);
+	}
+	if (numbers.business[0] != '\0') {
+		printf("\nBusiness phone number: %s", numbers.business);
+	}
+	printf("\n");
 
     // Display Completion Message
 
