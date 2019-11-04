@@ -23,9 +23,11 @@ int main(void)
 
 	char yorn;
 
+
 	// Display the title
 	printf("Contact Management System\n");
 	printf("-------------------------\n");
+
 
 	// Contact Name Input:
 
@@ -35,7 +37,7 @@ int main(void)
 
 	// Ask for middle initial:
 	printf("Do you want to enter a middle initial(s)? (y or n): ");
-	scanf("%s", &yorn);
+	scanf(" %c", &yorn);
 
 	// Evaluate input and ask for middle initial if selected:
 	if (yorn == 'y' || yorn == 'Y')
@@ -43,8 +45,6 @@ int main(void)
 		printf("Please enter the contact's middle initial(s): ");
 		scanf(" %7[^\n]", name.middleInitial);
 	}
-	// NOTES:
-	//	- No logic handling for NO, invalid input.  (Not specified by MS2)
 
 	// Ask for last name:
 	printf("Please enter the contact's last name: ");
@@ -66,7 +66,7 @@ int main(void)
 
 	// Ask for apartment number:
 	printf("Do you want to enter an apartment number? (y or n): ");
-	scanf("%s", &yorn);
+	scanf(" %c", &yorn);
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		do
@@ -88,16 +88,17 @@ int main(void)
 	// Contact Numbers Input:
 	// Ask for cell number:
 	printf("Do you want to enter a cell phone number? (y or n): ");
-	scanf("%s", &yorn);
+	scanf(" %c", &yorn);
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("Please enter the contact's cell phone number: ");
 		scanf(" %10s", numbers.cell);
+		printf("%s", numbers.cell);
 	}
 
 	// Ask for home number:
 	printf("Do you want to enter a home phone number? (y or n): ");
-	scanf("%s", &yorn);
+	scanf(" %c", &yorn);
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("Please enter the contact's home phone number: ");
@@ -106,7 +107,7 @@ int main(void)
 
 	// Ask for business number:
 	printf("Do you want to enter a business phone number? (y or n): ");
-	scanf("%s", &yorn);
+	scanf(" %c", &yorn);
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("Please enter the contact's business phone number: ");
@@ -118,9 +119,10 @@ int main(void)
 	printf("\nContact Details");
 	printf("\n---------------");
 
-	printf("\nName Details:");
+	printf("\nName Details:");	
 	printf("\nFirst name: %s", name.firstName);
-	if (name.middleInitial[0] != '\0') {
+	if (name.middleInitial[0] != '\0')
+	{
 		printf("\nMiddle initial(s): %s", name.middleInitial);
 	}
 	printf("\nLast name: %s", name.lastName);
@@ -129,26 +131,30 @@ int main(void)
 	printf("\nAddress Details:");
 	printf("\nStreet number: %d", address.streetNumber);
 	printf("\nStreet name: %s", address.street);
-	if (address.apartmentNumber > 0) {
+	if (address.apartmentNumber > 0)
+	{
 		printf("\nApartment: %d", address.apartmentNumber);
 	}
 	printf("\nPostal code: %s", address.postalCode);
 	printf("\nCity: %s", address.city);
 	printf("\n");
 
+
 	printf("\nPhone Numbers:");
-	//if (numbers.cell[0] != '\0') {
-		// printf("\nCell phone number: %s", numbers.cell);
-		// Hard coded this number because of a bug:  numbers.cell only outputs the first time after it the var is set with scanf.
-	printf("\nCell phone number: 9051116666");
-	//}
-	if (numbers.home[0] != '\0') {
+
+	if (numbers.cell[0] != '\0')
+	{
+		printf("\nCell phone number: %s", numbers.cell);
+	}
+	if (numbers.home[0] != '\0')
+	{
 		printf("\nHome phone number: %s", numbers.home);
 	}
 	if (numbers.business[0] != '\0') {
 		printf("\nBusiness phone number: %s", numbers.business);
 	}
 	printf("\n");
+
 
 	// Display Completion Message
 	printf("\nStructure test for Name, Address, and Numbers Done!\n");
