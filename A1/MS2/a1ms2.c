@@ -70,6 +70,22 @@ int main (void)
 	printf("\nPlease enter the contact's street name: ");
 	scanf("%40s", address.street);
 	printf("\nstreet = %s", address.street);
+
+	// Ask for apartment number:
+	printf("\nDo you want to enter an apartment number? (y or n): ");
+	scanf("%s", &yorn);
+	if (yorn == 'y' || yorn == 'Y')
+	{
+		do
+		{
+			printf("\nPlease enter the contact's apartment number: ");
+			scanf("%d", &address.apartmentNumber);
+		}
+		while (address.apartmentNumber < 1);
+	printf("\napartmentNumber = %d", address.apartmentNumber);
+	}
+
+
     // Contact Numbers Input:
 
 
