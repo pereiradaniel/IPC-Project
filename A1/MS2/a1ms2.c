@@ -89,14 +89,13 @@ int main (void)
 
 
     // Contact Numbers Input:
-	
 	// Ask for cell number:
 	printf("\nDo you want to enter a cell phone number? (y or n): ");
 	scanf("%s", &yorn);
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("\nPlease enter the contact's cell phone number: ");
-		scanf("%10s", numbers.cell);
+		scanf(" %10s", numbers.cell);
 		printf("%s", numbers.cell);
 	}
 
@@ -106,17 +105,17 @@ int main (void)
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("\nPlease enter the contact's home phone number: ");
-		scanf("%10s", numbers.home);
+		scanf(" %10s", numbers.home);
 		printf("%s", numbers.home);
 	}
-
+	
 	// Ask for business number:
 	printf("\nDo you want to enter a business phone number? (y or n): ");
 	scanf("%s", &yorn);
 	if (yorn == 'y' || yorn == 'Y')
 	{
 		printf("\nPlease enter the contact's business phone number: ");
-		scanf("%10s", numbers.business);
+		scanf(" %10s", numbers.business);
 		printf("%s", numbers.business);
 	}
 
