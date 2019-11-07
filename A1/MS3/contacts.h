@@ -1,8 +1,8 @@
 //==============================================
-// Name:           Full name here
-// Student Number: #########
-// Email:          userID@myseneca.ca
-// Section:        XXX
+// Name:           Daniele Pãolo Grech Pereira
+// Student Number: xxxxxxxxx
+// Email:          xxxxxxxxx@myseneca.ca
+// Section:        NZB
 // Date:           
 //==============================================
 // Assignment:     1
@@ -29,4 +29,11 @@ struct Numbers {
 
 	char 	cell[11], home[11], business[11];
 
+};
+
+// Structure type Contact declaration
+struct Contact {
+	struct Name name;
+	struct Address address;
+	struct Numbers number;
 };
